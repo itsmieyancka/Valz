@@ -1,19 +1,15 @@
 <!DOCTYPE html>
-<html>
 <html lang="en">
 <head>
-  <title>Happy Valentine’s Day Abbie ❤️</title>
   <meta charset="UTF-8">
-  <title>Happy Valentine’s Day Abbie 💖</title>
+  <title>Happy Valentine’s Day Rue 💖</title>
 
   <style>
     body {
-      background: #ffe6eb;
-      font-family: Arial;
       margin: 0;
       padding: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -23,48 +19,49 @@
 
     .card {
       background: white;
-      padding: 40px;
-      border-radius: 20px;
+      padding: 45px;
+      border-radius: 25px;
       width: 85%;
-      max-width: 600px;
+      max-width: 650px;
       text-align: center;
-      padding-top: 50px;
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
       animation: fadeIn 2s ease-in-out;
       position: relative;
       z-index: 2;
     }
 
     h1 {
-      color: #e63975;
-      margin-bottom: 20px;
+      color: #d63384;
+      margin-bottom: 25px;
+      font-size: 32px;
     }
 
     p {
       color: #444;
       font-size: 18px;
-      line-height: 1.6;
+      line-height: 1.7;
+      margin-bottom: 18px;
     }
 
     .highlight {
-      color: #e63975;
+      color: #d63384;
       font-weight: bold;
     }
 
     button {
       margin-top: 20px;
-      padding: 12px 25px;
+      padding: 12px 28px;
       border: none;
       border-radius: 25px;
-      background: #e63975;
+      background: #d63384;
       color: white;
       font-size: 16px;
       cursor: pointer;
-      transition: 0.3s ease;
+      transition: 0.3s;
     }
 
     button:hover {
-      background: #c2185b;
+      background: #ad2167;
       transform: scale(1.05);
     }
 
@@ -77,8 +74,7 @@
     .heart {
       position: absolute;
       color: rgba(255, 255, 255, 0.8);
-      font-size: 20px;
-      animation: float 6s linear infinite;
+      animation: float 7s linear infinite;
     }
 
     @keyframes float {
@@ -103,13 +99,13 @@
       background: white;
       padding: 30px;
       border-radius: 20px;
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.3);
       text-align: center;
-      z-index: 5;
+      z-index: 10;
     }
 
     .popup h2 {
-      color: #e63975;
+      color: #d63384;
     }
 
     .popup button {
@@ -120,51 +116,48 @@
 </head>
 
 <body>
-<h1>Happy Valentine’s Day Abbie 💕</h1>
-<p>You make life brighter just by being you 🌸</p>
 
-<!-- Floating hearts container -->
 <div id="hearts"></div>
 
 <div class="card">
-  <h1>Happy Valentine’s Day 💖</h1>
+  <h1>Happy Valentine’s Day, Rue 💖</h1>
 
   <p>
-    You honestly <span class="highlight">make my life brighter</span> in ways you probably don’t even realize.
+    I love how we unwind together on the weekends —
+    whether we're talking about everything or absolutely nothing.
   </p>
 
   <p>
-    I love how we can talk about Korean and Chinese stars, music, and dramas
-    like it's our full-time job 😂✨ and it’s never weird — it’s just us.
+    And those calls when you’ve just knocked off and I get to keep you company
+    while you’re commuting home? <span class="highlight">Top tier moments.</span>
   </p>
 
   <p>
-    I really enjoy our calls.
-    They’re one of my favorite parts of the day.
-  </p>
-
-  <p>
-    Thank you for being someone I can laugh with, be random with,
-    and completely myself around.
+    I like being part of your everyday life, even in the small moments.
+    It means more to me than you know.
   </p>
 
   <p class="highlight">
-    You’re really special to me 💕
+    I’m really glad I have you 💕
   </p>
 
   <button onclick="openPopup()">Click Me 💌</button>
 </div>
 
-<!-- Hidden Popup -->
+<!-- Popup -->
 <div class="popup" id="popup">
-  <h2>Will you be mine? 💘</h2>
-  <button onclick="alert('You just made me the happiest person 😭💖')">Yes 💖</button>
-  <button onclick="alert('I’ll keep trying 😌💕')">Maybe 👀</button>
+  <h2>Important Question 😌</h2>
+  <button onclick="showAnswer()">Yes 💖</button>
+  <button onclick="showAnswer()">Definitely Yes 💕</button>
 </div>
 
 <script>
   function openPopup() {
     document.getElementById("popup").style.display = "block";
+  }
+
+  function showAnswer() {
+    alert("She has no choice but to love me back 😌💖");
   }
 
   // Floating hearts generator
@@ -175,13 +168,11 @@
     heart.classList.add("heart");
     heart.innerHTML = "❤";
     heart.style.left = Math.random() * 100 + "vw";
-    heart.style.animationDuration = (Math.random() * 3 + 4) + "s";
     heart.style.fontSize = (Math.random() * 20 + 15) + "px";
+    heart.style.animationDuration = (Math.random() * 3 + 4) + "s";
     heartsContainer.appendChild(heart);
 
-    setTimeout(() => {
-      heart.remove();
-    }, 6000);
+    setTimeout(() => heart.remove(), 7000);
   }
 
   setInterval(createHeart, 500);
