@@ -1,18 +1,184 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Happy Valentine’s Day ❤️</title>
+  <meta charset="UTF-8">
+  <title>Happy Valentine’s Day 💖</title>
+
   <style>
     body {
-      background: #ffe6eb;
-      font-family: Arial;
-      text-align: center;
-      padding-top: 50px;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
     }
+
+    .card {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      width: 85%;
+      max-width: 600px;
+      text-align: center;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+      animation: fadeIn 2s ease-in-out;
+      position: relative;
+      z-index: 2;
+    }
+
+    h1 {
+      color: #e63975;
+      margin-bottom: 20px;
+    }
+
+    p {
+      color: #444;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .highlight {
+      color: #e63975;
+      font-weight: bold;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 25px;
+      background: #e63975;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      background: #c2185b;
+      transform: scale(1.05);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Floating Hearts */
+    .heart {
+      position: absolute;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 20px;
+      animation: float 6s linear infinite;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh);
+        opacity: 0;
+      }
+      10% { opacity: 1; }
+      100% {
+        transform: translateY(-10vh);
+        opacity: 0;
+      }
+    }
+
+    /* Popup */
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      z-index: 5;
+    }
+
+    .popup h2 {
+      color: #e63975;
+    }
+
+    .popup button {
+      margin: 10px;
+    }
+
   </style>
 </head>
+
 <body>
-<h1>Happy Valentine’s Day Abby 💕</h1>
-<p>You make life brighter just by being you 🌸</p>
+
+<!-- Floating hearts container -->
+<div id="hearts"></div>
+
+<div class="card">
+  <h1>Happy Valentine’s Day 💖</h1>
+
+  <p>
+    You honestly <span class="highlight">make my life brighter</span> in ways you probably don’t even realize.
+  </p>
+
+  <p>
+    I love how we can talk about Korean and Chinese stars, music, and dramas
+    like it's our full-time job 😂✨ and it’s never weird — it’s just us.
+  </p>
+
+  <p>
+    I really enjoy our calls.
+    They’re one of my favorite parts of the day.
+  </p>
+
+  <p>
+    Thank you for being someone I can laugh with, be random with,
+    and completely myself around.
+  </p>
+
+  <p class="highlight">
+    You’re really special to me 💕
+  </p>
+
+  <button onclick="openPopup()">Click Me 💌</button>
+</div>
+
+<!-- Hidden Popup -->
+<div class="popup" id="popup">
+  <h2>Will you be mine? 💘</h2>
+  <button onclick="alert('You just made me the happiest person 😭💖')">Yes 💖</button>
+  <button onclick="alert('I’ll keep trying 😌💕')">Maybe 👀</button>
+</div>
+
+<script>
+  function openPopup() {
+    document.getElementById("popup").style.display = "block";
+  }
+
+  // Floating hearts generator
+  const heartsContainer = document.getElementById("hearts");
+
+  function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (Math.random() * 3 + 4) + "s";
+    heart.style.fontSize = (Math.random() * 20 + 15) + "px";
+    heartsContainer.appendChild(heart);
+
+    setTimeout(() => {
+      heart.remove();
+    }, 6000);
+  }
+
+  setInterval(createHeart, 500);
+</script>
+
 </body>
 </html>
