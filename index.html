@@ -33,7 +33,6 @@
     h1 {
       color: #d63384;
       margin-bottom: 25px;
-      font-size: 32px;
     }
 
     p {
@@ -49,7 +48,7 @@
     }
 
     button {
-      margin-top: 20px;
+      margin-top: 15px;
       padding: 12px 28px;
       border: none;
       border-radius: 25px;
@@ -97,7 +96,7 @@
       left: 50%;
       transform: translate(-50%, -50%);
       background: white;
-      padding: 30px;
+      padding: 35px;
       border-radius: 20px;
       box-shadow: 0 20px 50px rgba(0,0,0,0.3);
       text-align: center;
@@ -117,6 +116,11 @@
 
 <body>
 
+<!-- Background Music -->
+<audio autoplay loop>
+  <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+</audio>
+
 <div id="hearts"></div>
 
 <div class="card">
@@ -133,7 +137,7 @@
   </p>
 
   <p>
-    I like being part of your everyday life, even in the small moments.
+    I really like being part of your everyday life, even in the small moments.
     It means more to me than you know.
   </p>
 
@@ -146,9 +150,9 @@
 
 <!-- Popup -->
 <div class="popup" id="popup">
-  <h2>Important Question 😌</h2>
+  <h2>Will you be my Valentine? 💘</h2>
   <button onclick="showAnswer()">Yes 💖</button>
-  <button onclick="showAnswer()">Definitely Yes 💕</button>
+  <button onclick="showAnswer()">No 😌</button>
 </div>
 
 <script>
@@ -157,7 +161,7 @@
   }
 
   function showAnswer() {
-    alert("She has no choice but to love me back 😌💖");
+    alert("She has no choice but to love me 😌💖");
   }
 
   // Floating hearts generator
